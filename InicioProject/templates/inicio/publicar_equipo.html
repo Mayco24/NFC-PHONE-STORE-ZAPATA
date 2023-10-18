@@ -1,0 +1,26 @@
+{% extends "compartidos/base.html" %} 
+
+{% block head %} <title>Publica tu equipo</title> {% endblock head %}
+{% block h1_header %}
+    Publica tu equipo
+{% endblock h1_header %}
+
+{% block main %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {% comment "" %}
+        <p>Titulo <input type="text" name="Titulo"></p>
+        <p>Marca <input type="text" name="Marca"></p>
+        <p>Modelo <input type="text" name="Modelo"></p>
+        <p>Cantidad <input type="number" name="Cantidad"></p>
+        
+        {% endcomment %}
+        <h2>Publica tu equipo</h2>
+        <table>
+            {{formulario}}
+        </table>
+        
+        <input type="submit" value="Crear">
+    </form>
+{% endblock main %}
+

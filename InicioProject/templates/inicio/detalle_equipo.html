@@ -1,0 +1,18 @@
+{% extends "compartidos/base.html" %} 
+
+{% block head %} <title>Detalles del Equipo</title> {% endblock head %}
+{% block h1_header %}
+    Detalles del Equipo con id {{equipo.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Titulo: {{equipo.titulo}}</li>
+    <li>Marca: {{equipo.marca}}</li>
+    <li>Modelo: {{equipo.modelo}}</li>
+    <li>Estado: {{equipo.estado}}</li>
+    <li>Precio: {{equipo.precio}}</li>
+</ul>
+
+{% endblock main %}

@@ -1,0 +1,27 @@
+{% extends "compartidos/base.html" %} 
+
+{% block head %} <title>Equipos</title> {% endblock head %}
+{% block h1_header %}Busca tu equipo{% endblock h1_header %}
+
+{% block main %}
+
+<a class="nav-link" href= {% url "publicar_equipos" %}>Publica tu equipo</a>
+<form action="">
+    {{formulario}}
+    <input type="submit" value="Buscar">
+</form>
+
+{% if equipos_encontrados %}
+<ul>
+    {% for equipo in equipos_encontrados %}
+        <li>
+            <a href={% url "detalles_equipos" equipo.id%}>{{equipo}}</a> || <a href= {% url "editar_equipos" equipo.id%}>Editar</a> || <a href= {% url "eliminar_equipos" equipo.id%}>Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No se encuentraron resultados</p>
+{% endif %}
+
+{% endblock main %}
+
